@@ -19,8 +19,8 @@
   <button (click)="share()">Share</button>  
 
   <!-- Le nouveau composant d'alerte produit prend un produit comme entrée de la liste de produits. Avec cette entrée, il affiche ou masque le bouton «Me notifier», en fonction du prix du produit. Le prix du téléphone XL est supérieur à 700 $, le bouton «Me notifier» apparaît donc sur ce produit. -->
-  <app-product-alerts [product]="product"></app-product-alerts>
-  
+  <app-product-alerts [product]="product" (notify)="onNotify()"></app-product-alerts>
+
 </div>
 
 
