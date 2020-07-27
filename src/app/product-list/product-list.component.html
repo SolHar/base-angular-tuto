@@ -1,5 +1,31 @@
 <h2>Products</h2>
 
+<!--*ngForest une "directive structurelle". Les directives structurelles façonnent ou remodèlent la structure du DOM, généralement en ajoutant, supprimant et manipulant les éléments auxquels elles sont attachées. Les directives marquées d'un astérisque,, *sont des directives structurelles.  -->
+<div *ngFor="let product of products">
+
+	<!--  L'interpolation "{{ }}" rend la valeur d'une propriété sous forme de texte. -->
+	<h3>
+    <!-- Pour faire de chaque nom de produit un lien vers les détails du produit, ajoutez l' <a>élément et définissez son titre sur le nom du produit en utilisant la [ ]syntaxe de liaison de propriété [] -->
+		<a [title]= "product.name + ' details'">
+			{{product.name}}
+		</a>
+	</h3>
+
+  <!-- Ajoutez les descriptions de produits. Sur l' <p>élément, utilisez une directive afin qu'Angular ne crée l' élément que si le produit actuel a une description.*ngIf<p> -->
+  <p *ngIf="product.description">
+    Description : {{product.description}}
+  </p>
+  <!-- Ajoutez un bouton pour que les utilisateurs puissent partager un produit avec des amis. Liez l' clickévénement du bouton à la share()méthode (in product-list.component.ts). La liaison d'événement utilise un ensemble de parenthèses,, ( )autour de l'événement -->
+  <button (click)="share()">Share</button>  
+</div>
+
+
+
+
+
+
+
+
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.
